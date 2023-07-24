@@ -13,6 +13,7 @@ assessmentButton.onclick = () => {
   }
 
   resultDivision.innerText ='';
+
   //headerDivisisionの作成
   const headerDivisision = document.createElement('div');
   headerDivisision.setAttribute('class','card-heder text-bg-primary');
