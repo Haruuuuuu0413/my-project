@@ -18,14 +18,13 @@ const answers = [
   '###userName###のいいところは自制心です。やばいと思ったときにしっかりと衝動を抑えられる###userName###が皆から評価されています。'
 ];
 
-let sumOfCharCode = 0 ;
-
 /**
  * 名前を文字列を渡すと診断結果を返す関数
  *  @param {string}userName ユーザーの名前
  * @returns {string} 診断結果
  */
 function assessment(userName){
+  let sumOfCharCode = 0 ;
     for (let i =0; i <userName.length; i++){
         sumOfCharCode = sumOfCharCode + userName.charCodeAt(i);
     }
@@ -41,8 +40,10 @@ console.assert(
       '太郎のいいところは決断力です。太郎がする決断にいつも助けられる人がいます。',
     '診断結果の文言の特定の部分を名前に置き換える処理が正しくありません。'
   );
- - console.log(assessment('太郎'));
- - console.log(assessment('太郎'));
+  console.assert(
+    assessment('太郎') === assessment('太郎'),
+    '入力が同じ名前なら同じ診断結果を出力処理が正しくありません');
+
 
 console.log(
     '###userName###のいいところは優しいところです。'.replaceAll('###userName###','太郎')
